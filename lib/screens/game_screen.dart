@@ -9,6 +9,7 @@ import '../models/card_model.dart';
 import '../models/deck_model.dart';
 import '../utils/game_logic.dart';
 import '../utils/settings_manager.dart';
+import '../utils/ad_manager.dart';
 import '../widgets/playing_card.dart';
 
 class GameScreen extends StatefulWidget {
@@ -228,7 +229,7 @@ class _GameScreenState extends State<GameScreen>
     if (playerWon) _confettiController.play();
   }
 
-  void _showGameOverSafe() {
+  Future<void> _showGameOverSafe() async {
     // Load and show interstitial
     final interstitial = await AdManager.loadInterstitialAd();
     interstitial?.show();
