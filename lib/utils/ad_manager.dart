@@ -8,14 +8,14 @@ class AdManager {
     if (_testMode) {
       return 'ca-app-pub-2350572386584705~9269164127'; // Test ID
     }
-    return 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX'; // Real ID
+    return 'ca-app-pub-2350572386584705~9269164127'; // Real ID
   }
 
   static String get interstitialAdUnitId {
     if (_testMode) {
       return 'ca-app-pub-3940256099942544/1033173712'; // Test ID
     }
-    return 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX'; // Real ID
+    return 'ca-app-pub-2350572386584705~9269164127'; // Real ID
   }
 
   static BannerAd createBannerAd() {
