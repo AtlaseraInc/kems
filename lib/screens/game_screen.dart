@@ -211,6 +211,7 @@ class _GameScreenState extends State<GameScreen>
     }
   }
 
+  // ── Trigger win ─────────────────────────────────────────────
   void _triggerWin({required bool playerWon}) {
     setState(() {
       _lastRoundPlayerWon = playerWon;
@@ -229,6 +230,7 @@ class _GameScreenState extends State<GameScreen>
     if (playerWon) _confettiController.play();
   }
 
+  // ── Show game over ──────────────────────────────────────────
   Future<void> _showGameOverSafe() async {
     // Load and show interstitial
     final interstitial = await AdManager.loadInterstitialAd();
