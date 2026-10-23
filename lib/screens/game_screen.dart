@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:confetti/confetti.dart';
 import 'package:kems/screens/settings_screen.dart';
+import 'pause_screen.dart';
 import '../models/card_model.dart';
 import '../models/deck_model.dart';
 import '../utils/game_logic.dart';
@@ -102,14 +103,26 @@ class _GameScreenState extends State<GameScreen>
     });
   }
 
-  void _togglePause() {
-    setState(() => _isPaused = !_isPaused);
+  // ── Toggle pause ─────────────────────────────────────────────
+  Future<void> _openPauseScreen() async {
+    setState(() => _isPaused = true);
+    final result = await Navigator.push<PauseResult>(
+      context,
+      MaterialPageRoute(builder: (_) => const PauseScreen()),
+    );
+    if (!mounted) return;
+    setState(() => _isPaused = false);
+    if (result == PauseResult.quit) {
+      Navigator.pop(context); // back to home
+    }
   }
 
+  // ── Reset Timer ─────────────────────────────────────────────
   void _resetDealTimer() {
     _startDealTimer();
   }
 
+  // ── Load Settings and Deal ─────────────────────────────────────────────
   Future<void> _loadSettingsAndDeal({bool dealCards = true}) async {
     final sound    = await SettingsManager.getSoundEnabled();
     final timer    = await SettingsManager.getTimerDuration();
@@ -379,9 +392,11 @@ class _GameScreenState extends State<GameScreen>
                                 _TopBar(
                                   allTimeWins: _allTimeWins,
                                   onSettings: () async {
-                                    if (!_isPaused) _togglePause(); // Pause the game
+                                    setState(() => _isPaused = true);
                                     await Navigator.push(context,
                                         MaterialPageRoute(builder: (_) => const SettingsScreen()));
+                                    if (!mounted) return;
+                                    setState(() => _isPaused = false);
                                     _loadSettingsAndDeal(dealCards: false);
                                   },
                                 ),
@@ -421,7 +436,7 @@ class _GameScreenState extends State<GameScreen>
                       _BottomBar(
                         height: barHeight,
                         isPaused: _isPaused,
-                        onPause: _togglePause,
+                        onPause: _openPauseScreen,
                         onQuit: () => Navigator.pop(context),
                       ),
 
@@ -611,43 +626,6 @@ class _GameScreenState extends State<GameScreen>
                 ),
               ),
             ),
-
-          // ── Pause overlay ──
-          if (_isPaused)
-            Positioned.fill(
-              child: Container(
-                color: Colors.black.withValues(alpha: 0.6),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Paused',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      AnimatedButton(
-                        onPressed: _togglePause,
-                        color: const Color(0xFFf64900),
-                        width: buttonWidth,
-                        child: const Text('RESUME',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-
         ],
       ),
     );
