@@ -1,15 +1,15 @@
-# Kems 🃏
+# Kems
 
 Kems is a cross-platform card game built with Flutter, inspired by the classic multiplayer game where players use strategy, memory, and subtle signaling to win.
 
 ---
 
-## 🚀 Features
+## Features
 
-* ♠️ Real-time card gameplay mechanics
-* 🎨 Clean and responsive UI built with Flutter
-* ⚡ Fast performance across Android devices
-* 🧠 Game logic structured for scalability and maintainability
+* Real-time card gameplay mechanics
+* Clean and responsive UI built with Flutter
+* Fast performance across Android devices
+* Game logic structured for scalability and maintainability
 
 ---
 
