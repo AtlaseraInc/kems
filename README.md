@@ -41,7 +41,7 @@ lib/
 
 ![Home Screen](assets/screenshots/home.png)
 
-### 🃏 Gameplay
+### Gameplay
 
 ![Gameplay](assets/screenshots/gameplay.png)
 
