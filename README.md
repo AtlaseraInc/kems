@@ -35,7 +35,7 @@ lib/
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### 🏠 Home Screen
 
