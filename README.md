@@ -45,7 +45,7 @@ lib/
 
 ![Gameplay](assets/screenshots/gameplay.png)
 
-### 🏆 Results / Winning Screen
+### Results / Winning Screen
 
 ![Results Screen](assets/screenshots/results.png)
 
