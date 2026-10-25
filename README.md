@@ -37,7 +37,7 @@ lib/
 
 ## Screenshots
 
-### 🏠 Home Screen
+### Home Screen
 
 ![Home Screen](assets/screenshots/home.png)
 
