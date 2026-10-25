@@ -22,7 +22,7 @@ Kems is a cross-platform card game built with Flutter, inspired by the classic m
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 lib/
