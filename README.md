@@ -73,7 +73,7 @@ flutter pub get
 
 ---
 
-## ▶️ Run the App
+## Run the App
 
 ```bash
 flutter run
