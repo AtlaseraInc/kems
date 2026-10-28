@@ -81,7 +81,7 @@ flutter run
 
 ---
 
-## 🏗️ Build APK
+## Build APK
 
 ```bash
 flutter build apk
