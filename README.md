@@ -63,7 +63,7 @@ Make sure you have:
 
 ---
 
-## 🔧 Installation
+## Installation
 
 ```bash
 git clone https://github.com/your-username/kems.git
