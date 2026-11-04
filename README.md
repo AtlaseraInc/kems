@@ -97,7 +97,7 @@ flutter test
 
 ---
 
-## ⚠️ Known Issues
+## Known Issues
 
 * Emulator performance may be slow on low RAM machines
 * Android build depends on compatible Gradle + AGP versions
