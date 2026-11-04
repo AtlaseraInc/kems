@@ -89,7 +89,7 @@ flutter build apk
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 flutter test
