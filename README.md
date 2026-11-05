@@ -99,22 +99,22 @@ flutter test
 
 ## Known Issues
 
-* Emulator performance may be slow on low RAM machines
+* Emulator performance may be slow on low-RAM machines
 * Android build depends on compatible Gradle + AGP versions
 * Multiplayer features may require backend integration (future work)
 
 ---
 
-## 🔄 Future Improvements
+## Future Improvements
 
-* 🌐 Online multiplayer support
-* 🎮 Animations and enhanced UX
-* ☁️ Backend integration
-* 🏆 Leaderboards and player stats
+* Online multiplayer support
+* Animations and enhanced UX
+* Backend integration
+* Leaderboards and player stats
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome.
 
@@ -125,7 +125,7 @@ Contributions are welcome.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
